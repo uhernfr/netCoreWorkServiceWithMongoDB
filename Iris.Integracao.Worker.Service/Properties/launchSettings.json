@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "Iris.Integracao.Worker.Service": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "local",
+		"DOTNET_ENVIRONMENT": "local",
+      },
+      "sqlDebugging": true,
+      "nativeDebugging": true
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}

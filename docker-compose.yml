@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  portaria-integracao-api:
+    image: hcrpimages.azurecr.io/portaria-integracao-api:latest
+    build:
+      context: .
+      dockerfile: Iris.Integracao.Worker.Service/Dockerfile

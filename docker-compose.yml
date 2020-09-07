@@ -1,8 +1,16 @@
-version: '3.4'
+version: '3.7'
+services: 
+   mongodb_container:
+        image: mongo:latest
+        container_name: mongodb
+        environment:
+            - MONGO_INITDB_ROOT_USERNAME=root
+            - MONGO_INITDB_ROOT_PASSWORD=root
+            - MONGO_INITDB_DATABASE=test
+        ports:
+            - 27018:27017
+        volumes:
+            - mongodb_data_container:/data/db 
 
-services:
-  portaria-integracao-api:
-    image: hcrpimages.azurecr.io/portaria-integracao-api:latest
-    build:
-      context: .
-      dockerfile: Iris.Integracao.Worker.Service/Dockerfile
+volumes:
+     mongodb_data_container: 

@@ -52,13 +52,12 @@ namespace Integracao.Worker.Service
             CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
 
             while (!stoppingToken.IsCancellationRequested)
-            {               
-                var dataBase = DateTimeOffset.Now.AddHours(-3);
+            {   
                 var msgLog = new StringBuilder();                
                
-                msgLog.AppendLine($"{DateTimeOffset.Now.AddHours(-3)} - Processo Copia Collection 1 para Colection 2 (Minuto) iniciado.");
+                msgLog.AppendLine($"{DateTimeOffset.Now} - Processo Copia Collection 1 para Colection 2 (Minuto) iniciado.");
                     
-                var retLstCollection1 = BuscaDadosCollection1(dataBase.DateTime, dataBase.DateTime.AddDays(1));
+                var retLstCollection1 = BuscaDadosCollection1();
              
                 try
                 {
@@ -82,7 +81,7 @@ namespace Integracao.Worker.Service
                         msgLog.AppendLine("-> Nao ha registros para Importar");
                     }
 
-                    msgLog.AppendLine($"{DateTimeOffset.Now.AddHours(-3)} - Processo Concluido");
+                    msgLog.AppendLine($"{DateTimeOffset.Now} - Processo Concluido");
                 }
                 catch (Exception ex)
                 {
@@ -95,11 +94,10 @@ namespace Integracao.Worker.Service
             }
         }
 
-        private List<Collection1> BuscaDadosCollection1(DateTime dataInicio, DateTime dataFim)
+        private List<Collection1> BuscaDadosCollection1()
         {
             var msgLog = new StringBuilder();
-            msgLog.AppendLine("-> Buscando dados Collection 1");
-            msgLog.AppendLine($"Parametros - Inicio: {dataInicio} - Data Fim: { dataFim}");
+            msgLog.AppendLine("-> Buscando dados Collection 1");            
 
             var lstCollection1 = _collection1Repository.GetDadosCollection1();
            

@@ -1,6 +1,6 @@
 version: '3.7'
 services: 
-   mongodb_container:
+    mongodb_container:
         image: mongo:latest
         container_name: mongodb
         environment:
@@ -10,7 +10,14 @@ services:
         ports:
             - 27018:27017
         volumes:
-            - mongodb_data_container:/data/db 
-
+            - './data/db'
+    worker-service:
+        image: "worker-service"
+        container_name: worker-service
+        build:
+          context: .
+          dockerfile: Integracao.Worker.Service/Dockerfile
+        links:
+            - "mongodb_container"          
 volumes:
-     mongodb_data_container: 
+     mongodb_container:

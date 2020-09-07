@@ -17,21 +17,27 @@ Este projeto tem como objetivo:
 >cd repo
 >
 >git clone https://github.com/uhernfr/netCoreWorkServiceWithMongoDB.git
->
 >cd Integracao.Worker.Service
 
-Restore, Build
+- **Step 2: Restore, Build**
+Execute os comandos abaixo para build do projeto (necessário ter .net sdk)
 >dotnet restore
 >
 >dotnet build
 
 
 - **Step 2: Executar compose**
-> https://hub.docker.com/_/rabbitmq
 
-Comando para baixar imagem e iniciar o container (Porta 27018):
+Comando para baixar imagem e iniciar os containers:
 >***docker-compose up***
 
-- **Step 3: Executar projeto**
->dotnet run --p netCoreWorkServiceWithMongoDB
+- **Step 3: Teste**
+
+É  possivel acompanhar o log no proprio docker
+>
+>***netcoreworkservicewithmongodb***
+-worker_service
+-mongodb
+
+**Conect ao mongodb localhost:27018 e verifique a inclusao de registros.**
 

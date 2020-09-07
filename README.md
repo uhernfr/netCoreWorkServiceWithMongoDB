@@ -17,6 +17,7 @@ Este projeto tem como objetivo:
 >cd repo
 >
 >git clone https://github.com/uhernfr/netCoreWorkServiceWithMongoDB.git
+>
 >cd Integracao.Worker.Service
 
 - **Step 2: Restore, Build**
@@ -34,10 +35,12 @@ Comando para baixar imagem e iniciar os containers:
 - **Step 3: Teste**
 
 É  possivel acompanhar o log no proprio docker
+
+==**netcoreworkservicewithmongodb**==
 >
->***netcoreworkservicewithmongodb***
--worker_service
--mongodb
+- worker_service (serviço)
+>
+- mongodb (database)
 
 **Conect ao mongodb localhost:27018 e verifique a inclusao de registros.**
 

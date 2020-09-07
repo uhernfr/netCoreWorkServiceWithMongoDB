@@ -17,6 +17,7 @@ Este projeto tem como objetivo:
 >cd repo
 >
 >git clone https://github.com/uhernfr/netCoreWorkServiceWithMongoDB.git
+>
 >cd Integracao.Worker.Service
 
 Restore, Build
